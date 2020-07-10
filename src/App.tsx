@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from './board';
+import BoardKonva from './board-konva';
 
 import './App.css';
 

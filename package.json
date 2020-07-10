@@ -15,6 +15,7 @@
     "react-dom": "^16.13.1",
     "react-konva": "^16.13.0-3",
     "react-rough": "^2.3.0",
+    "react-rough-notation": "^0.1.0",
     "react-scripts": "3.4.1",
     "roughjs": "^4.3.1",
     "typescript": "^3.7.5"
