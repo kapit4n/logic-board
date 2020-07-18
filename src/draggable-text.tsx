@@ -9,10 +9,12 @@ interface EventE {
 
 interface TextProps {
     value: string
+    onRemove(): void;
 }
 
-export default function DraggableText({ value }: TextProps) {
+export default function DraggableText({ value, onRemove }: TextProps) {
     const [activeDrags, setActiveDrags] = React.useState(0);
+    const [visible, setVisible] = React.useState(false);
     const [deltaPosition, setDeltaPosition] = React.useState({ x: 0, y: 0 });
 
     const handleDrag = (e: Object, ui: EventE) => {
@@ -39,6 +41,11 @@ export default function DraggableText({ value }: TextProps) {
         onStop={onStop}
         onDrag={handleDrag}
     >
-        <div className="handle">{value}</div>
+        <div className="handle"onMouseEnter={() => setVisible(true)}
+            onMouseLeave={() => setVisible(false)}>
+            {visible && (
+                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+            )}
+            {value}</div>
     </Draggable>)
 }

@@ -8,10 +8,12 @@ interface EventE {
 
 interface ImgProps {
     value: string;
+    onRemove(): void;
 }
 
-export default function DraggableImg({ value }: ImgProps) {
+export default function DraggableImg({ value, onRemove }: ImgProps) {
     const [activeDrags, setActiveDrags] = React.useState(0);
+    const [visible, setVisible] = React.useState(false);
     const [deltaPosition, setDeltaPosition] = React.useState({ x: 0, y: 0 });
 
     const handleDrag = (e: Object, ui: EventE) => {
@@ -38,6 +40,12 @@ export default function DraggableImg({ value }: ImgProps) {
         onStop={onStop}
         onDrag={handleDrag}
     >
-        <img className="handle" style={{ width: 100, height: 100 }} src={value} />
+        <div className="handle" onMouseEnter={() => setVisible(true)}
+            onMouseLeave={() => setVisible(false)}>
+            {visible && (
+                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+            )}
+            <img style={{ width: 50, height: 80 }} src={value} />
+        </div>
     </Draggable>)
 }
