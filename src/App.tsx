@@ -1,5 +1,7 @@
 import React from 'react';
 
+import html2canvas from 'html2canvas';
+
 import './App.css';
 import DraggableImg from './draggable-img';
 import DraggableText from './draggable-text';
@@ -38,7 +40,23 @@ function App() {
   }
 
   const exportImg = () => {
-    
+    const input = document?.body;
+    if (input != null) {
+      html2canvas(input, {
+        useCORS: true
+      })
+        .then(canvas => {
+          const imgData = canvas.toDataURL('image/png');
+          let a = document.createElement('a');
+          document.body.appendChild(a);
+          a.setAttribute('style', 'display: none');
+          a.href = imgData;
+          a.download = 'download.png';
+          a.click();
+          window.URL.revokeObjectURL(imgData);
+          a.remove();
+        });
+    }
   }
 
   return (
