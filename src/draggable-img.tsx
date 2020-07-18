@@ -43,7 +43,7 @@ export default function DraggableImg({ value, onRemove }: ImgProps) {
         <div className="handle" onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}>
             {visible && (
-                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+                <button style={{ float: 'right', background: 'transparent', cursor: 'pointer' }} onClick={onRemove}>&#128465;</button>
             )}
             <img style={{ width: 50, height: 80 }} src={value} />
         </div>

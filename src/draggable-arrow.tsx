@@ -43,7 +43,7 @@ export function DraggableArrowLeft({ onRemove }: IArrow) {
         <div style={{ fontSize: '5rem' }} className="handle" onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}>
             {visible && (
-                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+                <button style={{ float: 'right', background: 'transparent', cursor: 'pointer' }} onClick={onRemove}>&#128465;</button>
             )}
         &larr;
         </div>
@@ -83,7 +83,7 @@ export function DraggableArrowRight({ onRemove }: IArrow) {
         <div style={{ fontSize: '5rem' }} className="handle" onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}>
             {visible && (
-                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+                <button style={{ float: 'right', background: 'transparent', cursor: 'pointer' }} onClick={onRemove}>&#128465;</button>
             )}
             &rarr;
         </div>

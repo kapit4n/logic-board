@@ -44,7 +44,7 @@ export default function DraggableText({ value, onRemove }: TextProps) {
         <div className="handle"onMouseEnter={() => setVisible(true)}
             onMouseLeave={() => setVisible(false)}>
             {visible && (
-                <button style={{ float: 'right', background: 'transparent' }} onClick={onRemove}>X</button>
+                <button style={{ float: 'right', background: 'transparent', cursor: 'pointer' }} onClick={onRemove}>&#128465;</button>
             )}
             {value}</div>
     </Draggable>)
