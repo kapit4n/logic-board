@@ -13,6 +13,7 @@
     "konva": "^7.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-draggable": "^4.4.3",
     "react-konva": "^16.13.0-3",
     "react-rough": "^2.3.0",
     "react-rough-notation": "^0.1.0",
